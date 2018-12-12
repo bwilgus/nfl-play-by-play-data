@@ -1,0 +1,200 @@
+  from bs4 import BeautifulSoup
+from pprint import pprint as pp
+import requests
+from requests import get
+from requests.exceptions import RequestException
+from contextlib import closing
+import statmap
+
+######################################################################################################
+
+def simple_get(url):
+    """
+    Attempts to get the content at `url` by making an HTTP GET request.
+    If the content-type of response is some kind of HTML/XML, return the
+    text content, otherwise return None.
+    """
+    try:
+        with closing(get(url, stream=True)) as resp:
+            if is_good_response(resp):
+                return resp.content
+            else:
+                return None
+
+    except RequestException as e:
+        log_error('Error during requests to {0} : {1}'.format(url, str(e)))
+        return None
+
+def is_good_response(resp):
+    """
+    Returns True if the response seems to be HTML, False otherwise.
+    """
+    content_type = resp.headers['Content-Type'].lower()
+    return (resp.status_code == 200 
+            and content_type is not None 
+            and content_type.find('html') > -1)
+
+
+def log_error(e):
+    print(e)
+
+def bSoup(r):
+    global soup
+    raw_html = r
+    soup = BeautifulSoup(simple_get(raw_html), 'html.parser')
+
+######################################################################################################
+##Dictionaries
+noteListMaster = [
+    '2PRF'
+    , 'INT'
+    , 'FUMBLE'
+    , 'TD'
+    , 'PUNT'
+    , 'PENALTY'
+    , 'XP'
+    ,'SAF'
+    , 'FG'
+    , 'TIMEOUT'
+    , 'KICKOFF'
+    , None
+           ]
+
+playDataMaster = []
+
+gameAlmanac = {}
+
+gameList = []
+
+r = requests.get('http://www.nfl.com/liveupdate/game-center/' + gameId + '/' + gameId + '_gtd.json')
+parentSoup = r.json()
+
+soup = parentSoup['2012020500']
+
+
+###########
+##This is a live feed. For past games, there is not much need for all of these items:
+
+##Box score keywords:
+####home
+####away
+
+##Play by play data:
+####drives
+
+noteList = []
+headers = [
+    'gameID'
+    ,'playID'
+    ,'qtr'
+    ,'down'
+    ,'time'
+    ,'ydLine'
+    ,'ydsToGo'
+    ,'ydsNet'
+    ,'posTeam'
+    ,'desc'
+    ,'note'
+    ,'clubCode'
+    ,'playerId'
+    ,'playerName'
+    ,'statId'
+    ,'statName'
+    ,'yards'
+    ]
+
+
+for i in range(len(soup['drives'].items())):
+
+    playNo = []
+
+    if i == 0:
+        continue
+    else:
+        for a, b in soup['drives'][str(i)]['plays'].items():
+            playNo.append(a)
+
+        for p in playNo:
+            
+            playData = []
+            noteList.append(soup['drives'][str(i)]['plays'][p]['note'])
+
+            ##gameId
+            playData.append(gameID)
+
+            ##playID
+            playData.append(p)
+
+            ##qtr
+            playData.append(soup['drives'][str(i)]['plays'][p]['qtr'])
+            
+            ##down
+            playData.append(soup['drives'][str(i)]['plays'][p]['down']
+
+            ##time
+            playData.append(soup['drives'][str(i)]['plays'][p]['time']
+
+            ##ydLine
+            playData.append(soup['drives'][str(i)]['plays'][p]['yrdln']
+
+            ##ydsToGo
+            playData.append(soup['drives'][str(i)]['plays'][p]['ydstogo']
+                            
+            ##ydsNet
+            playData.append(soup['drives'][str(i)]['plays'][p]['ydsnet']
+
+            ##posTeam
+            playData.append(soup['drives'][str(i)]['plays'][p]['posteam']
+
+            ##desc
+            playData.append(soup['drives'][str(i)]['plays'][p]['desc']
+
+            ##note
+            if playData.append(soup['drives'][str(i)]['plays'][p]['note'] == None:
+                playData.append('')
+            else:
+                playData.append(soup['drives'][str(i)]['plays'][p]['note']
+
+            ##clubCode
+            playData.append(soup['drives'][str(i)]['plays'][p]['
+
+
+            ##playerId
+
+            ##playerName
+
+            ##statId
+
+            ##statName
+
+            ##yards
+
+
+            playDataMaster.append(playData)
+
+
+noteList = set(noteList)
+                
+
+
+        
+
+##scoring summary:
+####scrsummary
+
+##Blank?
+####weather
+####media
+####yl
+####qtr
+####note
+####down
+####togo
+####redzone
+####clock
+
+##Team in possession
+####posteam
+
+##Blank
+####stadium
