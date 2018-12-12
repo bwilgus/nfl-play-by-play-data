@@ -1,0 +1,155 @@
+'59': {
+    'sp': 0
+    , 'qtr': 1
+    , 'down': 1
+    , 'time': '14:54'
+    , 'yrdln': 'NYG 23'
+    , 'ydstogo': 10
+    , 'ydsnet': 0
+    , 'posteam': 'NYG'
+    , 'desc': '(14:54) (Run formation) A.Bradshaw right tackle to NYG 23 for no gain (B.Spikes).'
+    , 'note': None
+    , 'players': {
+        '00-0025637': [
+            {
+                'sequence': 1
+                , 'clubcode': 'NYG'
+                , 'playerName': 'A.Bradshaw'
+                , 'statId': 10, 'yards': 0
+                }
+            ]
+        , '00-0027668': [
+            {
+                'sequence': 2
+                , 'clubcode': 'NE'
+                , 'playerName': 'B.Spikes'
+                , 'statId': 79
+                , 'yards': 0
+                }
+            ]
+        }
+    }
+, '80': {
+    'sp': 0
+    , 'qtr': 1
+    , 'down': 2
+    , 'time': '14:17'
+    , 'yrdln': 'NYG 23'
+    , 'ydstogo': 10
+    , 'ydsnet': 4
+    , 'posteam': 'NYG'
+    , 'desc': '(14:17) E.Manning pass short left to B.Pascoe to NYG 27 for 4 yards (D.McCourty).'
+    , 'note': None
+    , 'players': {
+        '00-0026931': [
+            {
+                'sequence': 3
+                , 'clubcode': 'NYG'
+                , 'playerName': 'B.Pascoe'
+                , 'statId': 21
+                , 'yards': 4
+                }
+            , {
+                'sequence': 4
+                , 'clubcode': 'NYG'
+                , 'playerName': 'B.Pascoe'
+                , 'statId': 115
+                , 'yards': 0}
+            , {
+                'sequence': 5
+                , 'clubcode': 'NYG'
+                , 'playerName': 'B.Pascoe'
+                , 'statId': 113
+                , 'yards': 2
+                }
+            ]
+        , '00-0022803': [
+            {
+                'sequence': 1
+                , 'clubcode': 'NYG'
+                , 'playerName': 'E.Manning'
+                , 'statId': 15
+                , 'yards': 4
+                }
+            , {
+                'sequence': 2
+                , 'clubcode': 'NYG'
+                , 'playerName': 'E.Manning'
+                , 'statId': 111
+                , 'yards': 2
+                }
+            ]
+        , '00-0027647': [
+            {
+                'sequence': 6
+                , 'clubcode': 'NE'
+                , 'playerName': 'D.McCourty'
+                , 'statId': 79
+                , 'yards': 0
+                }
+            ]
+        }
+    }
+, '104': {
+    'sp': 0
+    , 'qtr': 1
+    , 'down': 3
+    , 'time': '13:44'
+    , 'yrdln': 'NYG 27'
+    , 'ydstogo': 6
+    , 'ydsnet': 12
+    , 'posteam': 'NYG'
+    , 'desc': '(13:44) (Shotgun) E.Manning pass short right to V.Cruz to NYG 35 for 8 yards (S.Moore).'
+    , 'note': None
+    , 'players': {
+        '00-0027265': [
+            {
+                'sequence': 5
+                , 'clubcode': 'NYG'
+                , 'playerName': 'V.Cruz'
+                , 'statId': 21
+                , 'yards': 8
+                }
+            , {
+                'sequence': 6
+                , 'clubcode': 'NYG'
+                , 'playerName': 'V.Cruz
+
+
+
+
+           '258': {'desc': '(9:22) (Shotgun) E.Manning sacked at NE 42 for -6 '
+                           'yards (M.Anderson).',
+                   'down': 3,
+                   'note': None,
+                   'players': {'0': [{'clubcode': 'NYG',
+                                      'playerName': '',
+                                      'sequence': 1,
+                                      'statId': 7,
+                                      'yards': 0}],
+                               '00-0022803': [{'clubcode': 'NYG',
+                                               'playerName': 'E.Manning',
+                                               'sequence': 2,
+                                               'statId': 20,
+                                               'yards': -6}],
+                               '00-0024373': [{'clubcode': 'NE',
+                                               'playerName': 'M.Anderson',
+                                               'sequence': 3,
+                                               'statId': 83,
+                                               'yards': -6},
+                                              {'clubcode': 'NE',
+                                               'playerName': 'M.Anderson',
+                                               'sequence': 4,
+                                               'statId': 110,
+                                               'yards': 0},
+                                              {'clubcode': 'NE',
+                                               'playerName': 'M.Anderson',
+                                               'sequence': 5,
+                                               'statId': 79,
+                                               'yards': 0},
+                                              {'clubcode': 'NE',
+                                               'playerName': 'M.Anderson',
+                                               'sequence': 6,
+                                               'statId': 120,
+                                               'yards': 0}]},
+                   'posteam': 'NYG',
